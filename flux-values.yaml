@@ -1,0 +1,21 @@
+git:
+  url: "git@github.com:kifeo/k8s-deploy.git"
+  branch: master
+  path: deployments
+  user: "kifeo"
+  email: "20202649+kifeo@users.noreply.github.com"
+image:
+  repository: docker.io/fluxcd/flux
+  tag: 1.21.0
+memcached:
+  enabled: true
+syncGarbageCollection:
+  enabled: true
+  dry: false
+prometheus:
+  enabled: true
+  serviceMonitor:
+    create: true
+    interval: 30s
+    scrapeTimeout: 10s
+    namespace: flux
